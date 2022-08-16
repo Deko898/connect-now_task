@@ -1,1 +1,99 @@
 /* You can add global styles to this file, and also import other style files */
+
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;700&family=Mulish:wght@300;400;700&display=swap');
+@import 'variables';
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Mulish', sans-serif;
+    background: linear-gradient(#081221, #03080f);
+    color: $text;
+    margin: 0;
+    height: 100vh;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+button,
+label {
+    font-family: 'Montserrat', sans-serif;
+    color: $white;
+}
+
+button {
+    cursor: pointer;
+    outline: none;
+    border: none;
+    height: 24px;
+}
+
+label,
+p,
+span {
+    font-size: 14px;
+}
+
+.btn-accent {
+    background: $btn-accent;
+}
+
+input,
+select,
+textarea {
+    background: $input-background;
+    outline: none;
+    border: none;
+    color: $text;
+    border-radius: 2px;
+    margin: $space-xs 0;
+}
+
+input,
+select {
+    height: 24px;
+}
+
+.form-control {
+    display: flex;
+    flex-flow: column;
+    margin-bottom: $space-m;
+}
+
+.disabled {
+    pointer-events: none;
+    opacity: .5;
+}
+
+.card {
+    background: $card-background;
+    padding: $space-m;
+}
+
+.form-actions {
+    display: flex;
+    place-content: flex-end;
+}
+
+@media only screen and (max-width: 600px) {
+    .main-container {
+        margin: $space-s;
+    }
+}
+
+@media only screen and (min-width: 601px) {
+    .main-container {
+        margin: $space-m;
+    }
+}
+
+@media only screen and (min-width: 992px) {
+    .main-container {
+        margin: $space-l;
+    }
+}

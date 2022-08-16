@@ -1,0 +1,7 @@
+<div class="video-games-layout">
+    <app-video-games-filters (filtersChange)="filtersChange($event)"></app-video-games-filters>
+    <div *ngIf="videoGames$ | async as videoGames" class="video-games-container">
+        <app-video-game [videoGame]="videoGame" *ngFor="let videoGame of videoGames"></app-video-game>
+    </div>
+</div>
+<app-loader *ngIf="isLoading$ | async"></app-loader>

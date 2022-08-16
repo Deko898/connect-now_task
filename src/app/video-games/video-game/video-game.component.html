@@ -1,0 +1,15 @@
+<div class="video-game-card">
+    <div class="black-box"></div>
+    <div class="video-game-body">
+        <div class="video-game-content">
+            <div>
+                <h3>{{videoGame.name}}</h3>
+                <p>{{videoGame.first_release_date | date: 'dd/MM/yyyy'}}</p>
+            </div>
+            <p class="video-game-description">
+                {{videoGame.summary}}
+            </p>
+        </div>
+        <div class="video-game-rating">{{videoGame.rating | number: '1.0-0'}}</div>
+    </div>
+</div>

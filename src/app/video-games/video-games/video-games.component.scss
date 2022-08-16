@@ -1,0 +1,18 @@
+@import '/src/variables/';
+.video-games-layout {
+    display: flex;
+}
+
+.video-games-container {
+    margin-left: $space-m;
+}
+
+@media only screen and (max-width: 992px) {
+    .video-games-layout {
+        flex-flow: column;
+    }
+    .video-games-container {
+        margin-top: $space-m;
+        margin-left: 0;
+    }
+}

@@ -1,0 +1,14 @@
+<ng-container *ngIf="sortDirection === 'asc'; else descTemp">
+    <button class="btn-accent" type="button" (click)="toggleDirection('desc')" [ngClass]="{
+            'disabled': disabled
+        }">
+        <fa-icon [icon]="arrowUp"></fa-icon>
+    </button>
+</ng-container>
+<ng-template #descTemp>
+    <button class="btn-accent" type="submit" (click)="toggleDirection('asc')" [ngClass]="{
+            'disabled': disabled
+        }">
+        <fa-icon [icon]="arrowDown"></fa-icon>
+    </button>
+</ng-template>

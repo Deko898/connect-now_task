@@ -1,0 +1,32 @@
+<div class="card">
+    <h3>Filter results</h3>
+    <form [formGroup]="filtersGrp">
+        <div class="form-control">
+            <label for="name">Name (contains)</label>
+            <input type="text" id="name" formControlName="query">
+        </div>
+
+        <div class="form-controls-wrapper">
+            <div class="form-control score-control">
+                <label for="score">Minimum score</label>
+                <input type="number" if="score" formControlName="minScore">
+            </div>
+
+            <div class="form-control order-control">
+                <label for="order">Order by</label>
+                <div class="order-control-wrapper">
+                    <app-sort-direction-control formControlName="sortDirection"></app-sort-direction-control>
+                    <select name="order" id="order" formControlName="orderBy">
+                        <option value="first_release_date">Release date</option>
+                        <option value="rating">Score</option>
+                        <option value="name">Name</option>
+                    </select>
+                </div>
+            </div>
+            <div class="form-actions">
+                <button class="btn-accent" type="button" (click)="clearForm()">Clear</button>
+            </div>
+        </div>
+
+    </form>
+</div>

@@ -1,0 +1,69 @@
+@import '/src/variables/';
+:host {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-flow: column;
+}
+
+p {
+    margin: 0;
+}
+
+h2,
+h3 {
+    margin-top: 0;
+}
+
+.contact-controls-wrapper {
+    display: flex;
+    .form-control {
+        flex: 1
+    }
+    .control-name {
+        margin-right: $space-s;
+    }
+    .control-email {
+        margin-left: $space-s;
+    }
+}
+
+.required-asterix {
+    color: $btn-accent;
+}
+
+@media only screen and (max-width: 600px) {
+    .contact-form-wrapper {
+        width: 100%;
+    }
+    .card {
+        margin-top: $space-m;
+    }
+    .contact-controls-wrapper {
+        flex-flow: column;
+        .control-name {
+            margin-right: 0;
+        }
+        .control-email {
+            margin-left: 0;
+        }
+    }
+}
+
+@media only screen and (min-width: 601px) {
+    .contact-form-wrapper {
+        width: 75%;
+    }
+    .card {
+        margin-top: $space-l;
+    }
+}
+
+@media only screen and (min-width: 992px) {
+    .contact-form-wrapper {
+        width: 50%;
+    }
+    .card {
+        margin-top: $space-xl;
+    }
+}

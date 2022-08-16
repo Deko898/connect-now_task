@@ -1,0 +1,53 @@
+@import '/src/variables/';
+.header {
+    display: flex;
+    flex-flow: column;
+}
+
+.nav-link-wrapper {
+    position: relative;
+    width: 180px;
+    height: 55px;
+    text-transform: uppercase;
+    text-decoration: none;
+    .behind {
+        display: none;
+        font-weight: 700;
+        color: $card-background;
+        font-size: 46px;
+    }
+}
+
+.active {
+    .behind {
+        display: block;
+    }
+}
+
+.nav-links {
+    color: $white;
+    font-size: 22px;
+    position: absolute;
+    top: $space-l;
+    left: $space-l;
+    width: 100%;
+}
+
+@media only screen and (max-width: 600px) {
+    .header {
+        padding: $space-l $space-s;
+    }
+}
+
+@media only screen and (min-width: 601px) {
+    .header {
+        margin: $space-l $space-m;
+    }
+}
+
+@media only screen and (min-width: 992px) {
+    .header {
+        padding: $space-l $space-xl;
+        flex-flow: row;
+    }
+}
