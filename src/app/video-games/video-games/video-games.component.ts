@@ -1,5 +1,5 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
-import { Observable, Subject } from 'rxjs';
+import { Observable, Subject, takeUntil } from 'rxjs';
 import { VideoGame, VideoGamesFilter } from 'src/app/interfaces';
 import { VideoGamesFacadeService } from '../video-games-facade.service';
 
@@ -8,7 +8,7 @@ import { VideoGamesFacadeService } from '../video-games-facade.service';
   templateUrl: './video-games.component.html',
   styleUrls: ['./video-games.component.scss'],
 })
-export class VideoGamesComponent implements OnInit,OnDestroy {
+export class VideoGamesComponent implements OnInit, OnDestroy {
   private destroy$ = new Subject<void>();
   videoGames$: Observable<VideoGame[]> = this.videoGamesFacade.videoGames$;
   isLoading$: Observable<boolean> = this.videoGamesFacade.isLoading$;
@@ -16,7 +16,10 @@ export class VideoGamesComponent implements OnInit,OnDestroy {
   constructor(private videoGamesFacade: VideoGamesFacadeService) {}
 
   ngOnInit(): void {
-    this.videoGamesFacade.getVideoGames().subscribe();
+    this.videoGamesFacade
+      .getVideoGames()
+      .pipe(takeUntil(this.destroy$))
+      .subscribe();
   }
 
   filtersChange(filters: VideoGamesFilter) {

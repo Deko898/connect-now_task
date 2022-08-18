@@ -16,7 +16,7 @@ import {
   VideoGamesState,
   sortDirection,
 } from '../interfaces';
-import { sortByNumber, sortByString } from '../utils/sort';
+import { sortByNumber, sortByString } from '../utils';
 
 const INITIAL_STATE: VideoGamesState = {
   isLoading: false,
